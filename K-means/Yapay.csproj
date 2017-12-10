@@ -51,6 +51,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="KmeanObject.cs" />
     <Compile Include="Kmeans.cs" />
     <Compile Include="Object.cs" />
     <Compile Include="Perceptron.cs" />
