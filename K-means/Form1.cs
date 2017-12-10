@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Microsoft.VisualBasic;
 
 namespace Yapay
 {
@@ -25,6 +26,7 @@ namespace Yapay
         private int classCountClick = 0;
         private List<Point> centerPoint;
         private Kmeans kmeans;
+        private Perceptron perceptron;
 
         private enum menu{
             CARTESIAN,
@@ -137,6 +139,33 @@ namespace Yapay
         {
             centerPoint = kmeans.start();
             picture.Invalidate();
+        }
+
+        private void get_info_btn_Click(object sender, EventArgs e)
+        {
+            int attirubuteCount = Int32.Parse(attirubute_count.Value.ToString());
+            int assetCount = Int32.Parse(asset_count.Value.ToString());
+            List<Object> allInfo = new List<Object>();
+            for (int i = 0; i < assetCount; i++) {
+                double[] info = new double[attirubuteCount];
+                operation_list.Items.Add("------------------------------------------------");
+                operation_list.Items.Add("Asset " + (i + 1));
+                for (int j = 0; j < attirubuteCount; j++)
+                {
+                    info[j] =  double.Parse(Interaction.InputBox(i + 1 + " .) Asset  |  " + (j + 1) + " .) Attirubute", "Input Value"));
+                    operation_list.Items.Add(info[j]);
+                }
+                allInfo.Add(new Object(i % 2, info));
+            }
+            perceptron = new Perceptron(0.1, 10, attirubuteCount, assetCount, allInfo);
+            perceptron.optimumW(10);
+            double [] op_w = perceptron.getW();
+            operation_list.Items.Add("------------------------------------------------");
+            foreach(double value in op_w)
+            {
+                operation_list.Items.Add(value);
+            }
+
         }
     }
 }

@@ -21,14 +21,14 @@ namespace Yapay
             this.attirubeCount = attirubeCount;
             this.classCount = classCount;
             this.allInfo = allInfo;
-            w = random_W();
+            w = random_w();
         }
 
         public double [] getW()
         {
             return w;
         }
-        private double[] random_W()
+        private double[] random_w()
         {
             double[] w = new double[attirubeCount];
             Random random = new Random();
@@ -38,7 +38,7 @@ namespace Yapay
             }
             return w;
         }
-        private void new_W(Object o, double cur)
+        private void new_w(Object o, double cur)
         {
             double temp = uniqueValue * (o.getGroup() - cur);
             double [] tempArray = mulMatrix(o.getInfo(), temp);
@@ -58,14 +58,15 @@ namespace Yapay
                 } else
                 {
                     allInfo[i].setVerified(false);
-                    new_W(allInfo[i], group);
+                    new_w(allInfo[i], group);
                 }
             }
-
+            bool error = false;
             for (int i = 0; i < allInfo.Count; i++)
             {
-                if (allInfo[i].getVerifed() == false) optimumW(deep--);
+                if (allInfo[i].getVerifed() == false) error = true;
             }
+            if(error) optimumW(--deep);
         }
         private double mulMatrix(double[] mat1, double[] mat2)
         {
