@@ -1,6 +1,6 @@
 # Yapay Zeka
 
-![resim(/cap1.PNG)
-![resim(/cap2.PNG)
-![resim(/cap3.PNG)
-![resim(/cap4.PNG)
+![resim(https://github.com/burkaydurdu/YapayZeka/blob/master/image/cap1.PNG)
+![resim(https://github.com/burkaydurdu/YapayZeka/blob/master/image/cap2.PNG)
+![resim(https://github.com/burkaydurdu/YapayZeka/blob/master/image/cap3.PNG)
+![resim(https://github.com/burkaydurdu/YapayZeka/blob/master/image/cap4.PNG)
