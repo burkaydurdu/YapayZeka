@@ -103,5 +103,12 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="image\cap1.PNG" />
+    <Content Include="image\cap2.PNG" />
+    <Content Include="image\cap3.PNG" />
+    <Content Include="image\cap4.PNG" />
+    <None Include="README.md" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
